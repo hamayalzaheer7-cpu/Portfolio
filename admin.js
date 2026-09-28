@@ -3,12 +3,12 @@ var adminPassword = "admin123";
 
 // Default portfolio data
 var defaultData = {
-    name: "Amaya Zaheer",
+    name: "HAMAYAL ZAHEER",
     role: "BSIT Student | Aspiring Web Developer",
 
-    about: "I am Amaya Zaheer, a BSIT student at Superior University, currently studying in my 7th semester. I am interested in web development, programming, databases and modern technologies. I enjoy learning new concepts, practicing my skills and creating user-friendly websites. My goal is to gain practical experience and build a career in IT.",
+    about: " I'm an Information Technology student at Superior University in Faisalabad, currently in my 7th semester. I love turning ideas into functional digital experiences—whether I’m building cross-platform apps with Flutter, crafting responsive web applications, or designing local networking solutions. Beyond coding, I enjoy digital content creation and building projects that make a practical impact.",
 
-    email: "amaya@example.com",
+    email: "hamayal@gmail.com",
 
     skills: [
         "HTML",
