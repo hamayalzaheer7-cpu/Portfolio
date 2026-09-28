@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamayal Zaheer — Art Director & Web Designer</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Editorial Serif + Clean Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-theme="light">
+
+    <!-- Editorial Minimalist Navigation Header -->
+    <header class="editorial-header sticky-top py-4 bg-white border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="brand-logo text-dark text-decoration-none" href="#" onclick="switchPage('home')">
+                <span class="fw-bold tracking-widest fs-5 font-serif">HAMAYAL ZAHEER</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="d-none d-lg-flex align-items-center gap-4">
+                <a href="#" class="nav-link-editorial active" data-page="home" onclick="switchPage('home')">Home</a>
+                <a href="#" class="nav-link-editorial" data-page="about" onclick="switchPage('about')">About</a>
+                <a href="#" class="nav-link-editorial" data-page="education" onclick="switchPage('education')">Education</a>
+                <a href="#" class="nav-link-editorial" data-page="skills" onclick="switchPage('skills')">Skills</a>
+                <a href="#" class="nav-link-editorial" data-page="experience" onclick="switchPage('experience')">Work</a>
+                <a href="#" class="nav-link-editorial" data-page="contact" onclick="switchPage('contact')">Contact</a>
+                <a href="#" class="btn btn-dark btn-sm rounded-0 px-3 py-2 text-uppercase tracking-wider fw-semibold" data-page="admin" onclick="switchPage('admin')">Admin</a>
+            </nav>
+
+            <!-- Mobile Menu Trigger -->
+            <button class="navbar-toggler d-lg-none border-0 bg-transparent text-dark fs-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container my-5 flex-grow-1 py-4">
+
+        <!-- HOME PAGE -->
+        <section id="page-home" class="page-view animate-fade-in">
+            <div class="row align-items-center min-vh-70 py-5">
+                <div class="col-lg-7 mb-5 mb-lg-0 pe-lg-5">
+                    <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-3">Art Director & Web Developer</span>
+                    <h1 class="display-3 font-serif fw-bold text-dark mb-4 lh-sm">Creating digital experiences with purpose and visual elegance.</h1>
+                    <p class="text-muted lead fw-light mb-5">IT student at Superior University, Faisalabad. Crafting clean code, responsive interfaces, and immersive mobile applications.</p>
+                    <div class="d-flex gap-3 align-items-center">
+                        <button class="btn btn-dark rounded-0 px-4 py-3 text-uppercase tracking-wider fw-semibold" onclick="switchPage('experience')">View Work</button>
+                        <button class="btn btn-outline-dark rounded-0 px-4 py-3 text-uppercase tracking-wider fw-semibold" onclick="switchPage('contact')">Get in Touch</button>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <div class="editorial-img-wrapper position-relative">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Hamayal Zaheer" class="img-fluid editorial-profile-img shadow-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="page-about" class="page-view d-none animate-fade-in">
+            <div class="row py-5 justify-content-center">
+                <div class="col-lg-9">
+                    <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-2">A Little Bit About Me</span>
+                    <h2 class="display-4 font-serif fw-bold text-dark mb-4">Curiosity, design, and problem solving.</h2>
+                    <hr class="w-25 border-dark mb-4 opacity-100" style="height: 2px;">
+                    <p class="text-muted lead fw-light mb-4 leading-relaxed">
+                        I am an IT student in the 7th semester at Superior University, Faisalabad. I've always nurtured an active imagination and a strong curiosity, coupling them with empathy to build meaningful digital solutions.
+                    </p>
+                    <p class="text-muted fw-light mb-5 leading-relaxed">
+                        My expertise spans across cross-platform mobile app development with Flutter & Dart, responsive front-end engineering, and digital media production. I love taking complex concepts and translating them into clean, user-centric web and mobile platforms.
+                    </p>
+                    <div class="row g-4 pt-3">
+                        <div class="col-md-4">
+                            <h6 class="font-serif fw-bold text-dark text-uppercase tracking-wider mb-2">Education</h6>
+                            <p class="text-muted small mb-0">BS-Information Technology<br>Superior University, Faisalabad</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="font-serif fw-bold text-dark text-uppercase tracking-wider mb-2">Focus Areas</h6>
+                            <p class="text-muted small mb-0">Mobile & Web Engineering<br>UI/UX & Content Creation</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="font-serif fw-bold text-dark text-uppercase tracking-wider mb-2">Location</h6>
+                            <p class="text-muted small mb-0">Faisalabad, Pakistan<br>Available Worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION PAGE -->
+        <section id="page-education" class="page-view d-none animate-fade-in">
+            <div class="row py-5 justify-content-center">
+                <div class="col-lg-9">
+                    <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-2">Academic Journey</span>
+                    <h2 class="display-4 font-serif fw-bold text-dark mb-4">Education & Training</h2>
+                    <hr class="w-25 border-dark mb-5 opacity-100" style="height: 2px;">
+                    
+                    <div class="editorial-card p-4 p-md-5 bg-white border mb-4">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+                            <div>
+                                <h4 class="font-serif fw-bold text-dark mb-1">Bachelor of Science in Information Technology (BS-IT)</h4>
+                                <h6 class="text-muted small text-uppercase tracking-wider">Superior University, Faisalabad</h6>
+                            </div>
+                            <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase tracking-wider small">7th Semester</span>
+                        </div>
+                        <p class="text-muted fw-light mb-0">
+                            Comprehensive coursework in advanced software engineering, object-oriented programming, database administration, networking topologies, and mobile app architecture.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS PAGE -->
+        <section id="page-skills" class="page-view d-none animate-fade-in">
+            <div class="row py-5 justify-content-center">
+                <div class="col-lg-9">
+                    <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-2">Expertise</span>
+                    <h2 class="display-4 font-serif fw-bold text-dark mb-4">Skills & Capabilities</h2>
+                    <hr class="w-25 border-dark mb-5 opacity-100" style="height: 2px;">
+                    
+                    <div class="row g-4" id="skills-container">
+                        <!-- Dynamic Skills loaded via LocalStorage -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE PAGE -->
+        <section id="page-experience" class="page-view d-none animate-fade-in">
+            <div class="row py-5 justify-content-center">
+                <div class="col-lg-9">
+                    <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-2">Portfolio</span>
+                    <h2 class="display-4 font-serif fw-bold text-dark mb-4">Selected Projects & Work</h2>
+                    <hr class="w-25 border-dark mb-5 opacity-100" style="height: 2px;">
+                    
+                    <div class="row g-4" id="experience-container">
+                        <!-- Dynamic Experience loaded via LocalStorage -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="page-contact" class="page-view d-none animate-fade-in">
+            <div class="row py-5 justify-content-center">
+                <div class="col-lg-8">
+                    <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-2">Get In Touch</span>
+                    <h2 class="display-4 font-serif fw-bold text-dark mb-4">Let's create something wonderful together.</h2>
+                    <hr class="w-25 border-dark mb-5 opacity-100" style="height: 2px;">
+                    
+                    <div class="editorial-card p-4 p-md-5 bg-white border">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                            <div class="mb-4">
+                                <label for="contact-name" class="form-label text-uppercase tracking-wider small fw-semibold text-muted">Your Name</label>
+                                <input type="text" class="form-control editorial-input rounded-0 py-3" id="contact-name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-email" class="form-label text-uppercase tracking-wider small fw-semibold text-muted">Your Email</label>
+                                <input type="email" class="form-control editorial-input rounded-0 py-3" id="contact-email" placeholder="name@example.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-msg" class="form-label text-uppercase tracking-wider small fw-semibold text-muted">Message</label>
+                                <textarea class="form-control editorial-input rounded-0 py-3" id="contact-msg" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-dark rounded-0 w-100 py-3 text-uppercase tracking-wider fw-semibold">Send Message</button>
+                        </form>
+                        <div id="contact-alert" class="mt-4 alert alert-success rounded-0 border-0 d-none" role="alert">
+                            <i class="fa-solid fa-check-circle me-2"></i> Message sent successfully and saved to LocalStorage!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN DASHBOARD PAGE -->
+        <section id="page-admin" class="page-view d-none animate-fade-in">
+            <div class="row py-5">
+                <div class="col-12 mb-5 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div>
+                        <span class="text-uppercase tracking-widest small text-muted fw-semibold d-block mb-1">Management</span>
+                        <h2 class="display-5 font-serif fw-bold text-dark mb-0">Admin Dashboard</h2>
+                    </div>
+                    <button class="btn btn-outline-danger rounded-0 btn-sm px-4 py-2 text-uppercase tracking-wider fw-semibold" onclick="resetLocalStorage()"><i class="fa-solid fa-rotate-right me-1"></i>Reset Data</button>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 bg-white border h-100">
+                        <span class="text-uppercase tracking-wider small text-muted">Total Skills</span>
+                        <h2 class="font-serif fw-bold text-dark mt-2 mb-0 display-5" id="stat-skills-count">0</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 bg-white border h-100">
+                        <span class="text-uppercase tracking-wider small text-muted">Total Projects</span>
+                        <h2 class="font-serif fw-bold text-dark mt-2 mb-0 display-5" id="stat-projects-count">0</h2>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="p-4 bg-white border h-100">
+                        <span class="text-uppercase tracking-wider small text-muted">Inbox Messages</span>
+                        <h2 class="font-serif fw-bold text-dark mt-2 mb-0 display-5" id="stat-messages-count">0</h2>
+                    </div>
+                </div>
+
+                <!-- Management Tabs -->
+                <div class="col-12 mt-4">
+                    <ul class="nav nav-tabs border-bottom border-dark mb-4 gap-3" id="adminTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active rounded-0 fw-semibold text-uppercase tracking-wider px-4 py-3 text-dark border-0 border-bottom border-dark border-3" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills-manage" type="button" role="tab">Skills</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-0 fw-semibold text-uppercase tracking-wider px-4 py-3 text-muted border-0" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects-manage" type="button" role="tab">Projects</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link rounded-0 fw-semibold text-uppercase tracking-wider px-4 py-3 text-muted border-0" id="inbox-tab" data-bs-toggle="tab" data-bs-target="#inbox-manage" type="button" role="tab">Inbox</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="adminTabsContent">
+                        <!-- Skills Management -->
+                        <div class="tab-pane fade show active" id="skills-manage" role="tabpanel">
+                            <div class="p-4 p-md-5 bg-white border mb-4">
+                                <h5 class="font-serif fw-bold mb-4 text-dark">Add New Skill</h5>
+                                <form onsubmit="handleAddSkill(event)" class="row g-3">
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control editorial-input rounded-0 py-3" id="new-skill-name" placeholder="Skill Name (e.g. Flutter)" required>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control editorial-input rounded-0 py-3" id="new-skill-level" placeholder="Level/Category (e.g. Advanced)" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-dark rounded-0 w-100 py-3 text-uppercase tracking-wider fw-semibold h-100">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="table-responsive bg-white border">
+                                <table class="table align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th class="py-3 ps-4 text-uppercase tracking-wider small text-muted">Skill</th>
+                                            <th class="py-3 text-uppercase tracking-wider small text-muted">Level</th>
+                                            <th class="py-3 text-end pe-4 text-uppercase tracking-wider small text-muted">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-skills-table">
+                                        <!-- Populated via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Projects Management -->
+                        <div class="tab-pane fade" id="projects-manage" role="tabpanel">
+                            <div class="p-4 p-md-5 bg-white border mb-4">
+                                <h5 class="font-serif fw-bold mb-4 text-dark">Add New Project</h5>
+                                <form onsubmit="handleAddProject(event)" class="row g-3">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control editorial-input rounded-0 py-3" id="new-proj-title" placeholder="Project Title" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control editorial-input rounded-0 py-3" id="new-proj-desc" placeholder="Description" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-dark rounded-0 w-100 py-3 text-uppercase tracking-wider fw-semibold h-100">Add</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="table-responsive bg-white border">
+                                <table class="table align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th class="py-3 ps-4 text-uppercase tracking-wider small text-muted">Title</th>
+                                            <th class="py-3 text-uppercase tracking-wider small text-muted">Description</th>
+                                            <th class="py-3 text-end pe-4 text-uppercase tracking-wider small text-muted">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-projects-table">
+                                        <!-- Populated via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Inbox Messages -->
+                        <div class="tab-pane fade" id="inbox-manage" role="tabpanel">
+                            <div class="table-responsive bg-white border">
+                                <table class="table align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th class="py-3 ps-4 text-uppercase tracking-wider small text-muted">Name</th>
+                                            <th class="py-3 text-uppercase tracking-wider small text-muted">Email</th>
+                                            <th class="py-3 text-uppercase tracking-wider small text-muted">Message</th>
+                                            <th class="py-3 text-end pe-4 text-uppercase tracking-wider small text-muted">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-messages-table">
+                                        <!-- Populated via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Editorial Footer -->
+    <footer class="py-5 bg-white border-top mt-auto text-center">
+        <div class="container">
+            <p class="font-serif fw-bold text-dark mb-1 fs-5">HAMAYAL ZAHEER</p>
+            <p class="small text-muted tracking-wider text-uppercase mb-3">Art Director & Web Designer — © 2026</p>
+            <div class="d-flex justify-content-center gap-3 fs-5">
+                <a href="#" class="text-dark"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-dark"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="text-dark"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start bg-white text-dark" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title font-serif fw-bold">HAMAYAL ZAHEER</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body py-4">
+            <ul class="nav flex-column gap-3 fs-5">
+                <li><a class="nav-link text-dark fw-semibold" href="#" onclick="switchPage('home'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();">Home</a></li>
+                <li><a class="nav-link text-dark fw-semibold" href="#" onclick="switchPage('about'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();">About</a></li>
+                <li><a class="nav-link text-dark fw-semibold" href="#" onclick="switchPage('education'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();">Education</a></li>
+                <li><a class="nav-link text-dark fw-semibold" href="#" onclick="switchPage('skills'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();">Skills</a></li>
+                <li><a class="nav-link text-dark fw-semibold" href="#" onclick="switchPage('experience'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();">Work</a></li>
+                <li><a class="nav-link text-dark fw-semibold" href="#" onclick="switchPage('contact'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();">Contact</a></li>
+                <li class="pt-3 border-top"><a class="nav-link text-dark fw-semibold text-uppercase small tracking-wider" href="#" onclick="switchPage('admin'); bootstrap.Offcanvas.getInstance(document.getElementById('mobileMenu')).hide();"><i class="fa-solid fa-gauge me-2"></i>Admin Dashboard</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- External JavaScripts -->
+    <script src="admin.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
