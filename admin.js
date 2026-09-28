@@ -1,41 +1,91 @@
 
-function login() {
-    var password = document.getElementById("password").value;
+var adminPassword = "admin123";
 
-    if (password === "admin123") {
-        document.getElementById("loginBox").style.display = "none";
-        document.getElementById("dashboard").style.display = "block";
-        loadData();
-    } else {
-        document.getElementById("loginMessage").innerText =
-            "Incorrect password!";
+// Default portfolio data
+var defaultData = {
+    name: "Amaya Zaheer",
+    role: "BSIT Student | Aspiring Web Developer",
+
+    about: "I am Amaya Zaheer, a BSIT student at Superior University, currently studying in my 7th semester. I am interested in web development, programming, databases and modern technologies. I enjoy learning new concepts, practicing my skills and creating user-friendly websites. My goal is to gain practical experience and build a career in IT.",
+
+    email: "amaya@example.com",
+
+    skills: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "React Basics",
+        "PHP Basics",
+        "SQL",
+        "Python Basics",
+        "Computer Networks",
+        "Responsive Web Design"
+    ],
+
+    projects: [
+        {
+            title: "Simple Calculator",
+            description: "A calculator project developed using HTML, CSS and JavaScript."
+        },
+        {
+            title: "Personal Portfolio Website",
+            description: "A personal website displaying education, skills, projects and contact information."
+        },
+        {
+            title: "Web Development Practice",
+            description: "Practice tasks involving website layouts, CSS styling and JavaScript functionality."
+        }
+    ]
+};
+
+// Read saved data
+function getPortfolioData() {
+    var savedData = localStorage.getItem("portfolioData");
+
+    if (savedData == null) {
+        return defaultData;
     }
+
+    var data = JSON.parse(savedData);
+
+    // Keep three project fields available
+    if (!data.projects) {
+        data.projects = defaultData.projects;
+    }
+
+    for (var i = 0; i < 3; i++) {
+        if (!data.projects[i]) {
+            data.projects[i] = defaultData.projects[i];
+        }
+    }
+
+    return data;
 }
 
-function loadData() {
-    var data = JSON.parse(localStorage.getItem("portfolioData"));
+// Admin login
+document.getElementById("loginForm").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
 
-    if (data == null) {
-        data = {
-            name: "Amaya Zaheer",
-            role: "Web Developer",
-            about: "I am a BSIT student interested in web development.",
-            email: "amaya@example.com",
-            skills: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-            projects: [
-                {
-                    title: "Calculator",
-                    description: "A simple calculator project."
-                },
-                {
-                    title: "Portfolio Website",
-                    description: "My personal portfolio website."
-                }
-            ]
-        };
+        var password = document.getElementById("password").value;
 
-        localStorage.setItem("portfolioData", JSON.stringify(data));
+        if (password === adminPassword) {
+            document.getElementById("loginBox").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+
+            loadData();
+        } else {
+            document.getElementById("loginMessage").innerText =
+                "Incorrect password. Please try again.";
+        }
     }
+);
+
+// Load data into dashboard
+function loadData() {
+    var data = getPortfolioData();
 
     document.getElementById("nameInput").value = data.name;
     document.getElementById("roleInput").value = data.role;
@@ -45,54 +95,80 @@ function loadData() {
     document.getElementById("skillsInput").value =
         data.skills.join(", ");
 
-    document.getElementById("project1Title").value = data.projects[0].title;
+    document.getElementById("project1Title").value =
+        data.projects[0].title;
+
     document.getElementById("project1Description").value =
         data.projects[0].description;
 
-    document.getElementById("project2Title").value = data.projects[1].title;
+    document.getElementById("project2Title").value =
+        data.projects[1].title;
+
     document.getElementById("project2Description").value =
         data.projects[1].description;
+
+    document.getElementById("project3Title").value =
+        data.projects[2].title;
+
+    document.getElementById("project3Description").value =
+        data.projects[2].description;
 }
 
-function saveData() {
-    var data = {
-        name: document.getElementById("nameInput").value,
-        role: document.getElementById("roleInput").value,
-        about: document.getElementById("aboutInput").value,
-        email: document.getElementById("emailInput").value,
+// Save changes
+document.getElementById("portfolioForm").addEventListener(
+    "submit",
+    function(event) {
+        event.preventDefault();
 
-        skills: document.getElementById("skillsInput").value
-            .split(",")
-            .map(function(skill) {
-                return skill.trim();
-            })
-            .filter(function(skill) {
-                return skill !== "";
-            }),
+        var data = {
+            name: document.getElementById("nameInput").value.trim(),
+            role: document.getElementById("roleInput").value.trim(),
+            about: document.getElementById("aboutInput").value.trim(),
+            email: document.getElementById("emailInput").value.trim(),
 
-        projects: [
-            {
-                title: document.getElementById("project1Title").value,
-                description: document.getElementById("project1Description").value
-            },
-            {
-                title: document.getElementById("project2Title").value,
-                description: document.getElementById("project2Description").value
-            }
-        ]
-    };
+            skills: document.getElementById("skillsInput").value
+                .split(",")
+                .map(function(skill) {
+                    return skill.trim();
+                })
+                .filter(function(skill) {
+                    return skill !== "";
+                }),
 
-    localStorage.setItem("portfolioData", JSON.stringify(data));
+            projects: [
+                {
+                    title: document.getElementById("project1Title").value.trim(),
+                    description: document.getElementById("project1Description").value.trim()
+                },
+                {
+                    title: document.getElementById("project2Title").value.trim(),
+                    description: document.getElementById("project2Description").value.trim()
+                },
+                {
+                    title: document.getElementById("project3Title").value.trim(),
+                    description: document.getElementById("project3Description").value.trim()
+                }
+            ]
+        };
 
-    document.getElementById("saveMessage").innerText =
-        "Changes saved successfully!";
+        localStorage.setItem("portfolioData", JSON.stringify(data));
 
-    alert("Data saved successfully!");
-}
+        document.getElementById("saveMessage").innerText =
+            "Changes saved successfully!";
 
-function logout() {
-    document.getElementById("dashboard").style.display = "none";
-    document.getElementById("loginBox").style.display = "block";
-    document.getElementById("password").value = "";
-    document.getElementById("loginMessage").innerText = "";
-}
+        alert("Portfolio updated successfully!");
+    }
+);
+
+// Logout
+document.getElementById("logoutButton").addEventListener(
+    "click",
+    function() {
+        document.getElementById("dashboard").style.display = "none";
+        document.getElementById("loginBox").style.display = "block";
+
+        document.getElementById("password").value = "";
+        document.getElementById("loginMessage").innerText = "";
+        document.getElementById("saveMessage").innerText = "";
+    }
+);

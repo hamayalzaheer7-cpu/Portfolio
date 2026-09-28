@@ -1,69 +1,95 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portfolio Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Amaya Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <header>
-        <h2>ADMIN PANEL</h2>
-        <nav>
-            <a href="index.html">View Website</a>
-        </nav>
-    </header>
+<body class="admin-page">
 
     <!-- Login Form -->
     <div class="admin-box" id="loginBox">
-        <h2>Admin Login</h2>
+        <h1>Admin Login</h1>
+        <p>Login to manage your portfolio.</p>
 
-        <label>Password</label>
-        <input type="password" id="password" placeholder="Enter password">
+        <form id="loginForm">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter admin password"
+                required
+            >
 
-        <button onclick="login()">Login</button>
+            <button type="submit">Login</button>
+        </form>
 
-        <p id="loginMessage" class="message"></p>
+        <p id="loginMessage" class="admin-message"></p>
+
+        <a href="index.html">← Back to Portfolio</a>
     </div>
 
-    <!-- Dashboard -->
-    <div class="admin-box" id="dashboard" style="display:none;">
+    <!-- Admin Dashboard -->
+    <div class="admin-box" id="dashboard" style="display: none;">
+        <h1>Portfolio Dashboard</h1>
+        <p>Edit your information and save your changes.</p>
 
-        <h2>Edit Portfolio</h2>
+        <form id="portfolioForm">
 
-        <label>Your Name</label>
-        <input type="text" id="nameInput">
+            <label for="nameInput">Full Name</label>
+            <input type="text" id="nameInput" required>
 
-        <label>Your Role</label>
-        <input type="text" id="roleInput">
+            <label for="roleInput">Your Role</label>
+            <input type="text" id="roleInput" required>
 
-        <label>About Me</label>
-        <textarea id="aboutInput" rows="4"></textarea>
+            <label for="aboutInput">About Me</label>
+            <textarea id="aboutInput" required></textarea>
 
-        <label>Email</label>
-        <input type="email" id="emailInput">
+            <label for="emailInput">Email Address</label>
+            <input type="email" id="emailInput" required>
 
-        <label>Skills (separate with commas)</label>
-        <input type="text" id="skillsInput">
+            <label for="skillsInput">Skills</label>
+            <textarea id="skillsInput" placeholder="HTML, CSS, JavaScript"></textarea>
+            <small>Separate each skill with a comma.</small>
 
-        <label>Project 1 Title</label>
-        <input type="text" id="project1Title">
+            <hr>
 
-        <label>Project 1 Description</label>
-        <textarea id="project1Description"></textarea>
+            <h2>Project 1</h2>
 
-        <label>Project 2 Title</label>
-        <input type="text" id="project2Title">
+            <label for="project1Title">Project Title</label>
+            <input type="text" id="project1Title" required>
 
-        <label>Project 2 Description</label>
-        <textarea id="project2Description"></textarea>
+            <label for="project1Description">Project Description</label>
+            <textarea id="project1Description" required></textarea>
 
-        <button onclick="saveData()">Save Changes</button>
-        <button onclick="logout()">Logout</button>
+            <h2>Project 2</h2>
 
-        <p id="saveMessage" class="message"></p>
+            <label for="project2Title">Project Title</label>
+            <input type="text" id="project2Title" required>
+
+            <label for="project2Description">Project Description</label>
+            <textarea id="project2Description" required></textarea>
+
+            <h2>Project 3</h2>
+
+            <label for="project3Title">Project Title</label>
+            <input type="text" id="project3Title" required>
+
+            <label for="project3Description">Project Description</label>
+            <textarea id="project3Description" required></textarea>
+
+            <button type="submit">Save Changes</button>
+            <button type="button" id="logoutButton">Logout</button>
+        </form>
+
+        <p id="saveMessage" class="admin-message"></p>
+
+        <a href="index.html">View Portfolio</a>
     </div>
-<script src="admin.js"></script>
 
+    <script src="admin.js"></script>
 </body>
 </html>

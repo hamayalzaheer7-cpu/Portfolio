@@ -1,12 +1,11 @@
 
-/* General */
 * {
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 30px;
+    scroll-padding-top: 25px;
 }
 
 body {
@@ -20,11 +19,7 @@ p {
     line-height: 1.8;
 }
 
-h2 {
-    color: #62548f;
-}
-
-/* Navigation Bar */
+/* Navigation */
 header {
     width: 100%;
     padding: 20px 5%;
@@ -49,9 +44,9 @@ header {
 
 nav {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 18px;
+    align-items: center;
+    gap: 15px;
 }
 
 nav a {
@@ -70,7 +65,7 @@ nav a:hover {
     border-radius: 20px;
 }
 
-/* Hero Sky */
+/* Sky Hero */
 .hero {
     min-height: 600px;
     position: relative;
@@ -84,18 +79,17 @@ nav a:hover {
 
     background:
         radial-gradient(circle at 10% 12%, white 1px, transparent 2px),
-        radial-gradient(circle at 20% 25%, white 1px, transparent 2px),
-        radial-gradient(circle at 38% 10%, white 1px, transparent 2px),
-        radial-gradient(circle at 55% 18%, white 1px, transparent 2px),
-        radial-gradient(circle at 72% 8%, white 1px, transparent 2px),
-        radial-gradient(circle at 90% 24%, white 1px, transparent 2px),
+        radial-gradient(circle at 25% 25%, white 1px, transparent 2px),
+        radial-gradient(circle at 42% 10%, white 2px, transparent 3px),
+        radial-gradient(circle at 65% 18%, white 1px, transparent 2px),
+        radial-gradient(circle at 82% 12%, white 2px, transparent 3px),
         linear-gradient(
             to bottom,
-            #8274c4 0%,
+            #8274c4,
             #a99be0 30%,
             #d4b9ee 55%,
             #f2d5f2 75%,
-            #d7d5ef 100%
+            #d7d5ef
         );
 }
 
@@ -124,86 +118,46 @@ nav a:hover {
 .hero-description {
     max-width: 520px;
     margin: 20px auto;
-    color: #fffaff;
-}
-
-/* Stars */
-.stars {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    opacity: 0.8;
-
-    background:
-        radial-gradient(circle at 15% 20%, white 2px, transparent 3px),
-        radial-gradient(circle at 28% 65%, white 1px, transparent 2px),
-        radial-gradient(circle at 47% 15%, white 2px, transparent 3px),
-        radial-gradient(circle at 68% 40%, white 1px, transparent 2px),
-        radial-gradient(circle at 82% 25%, white 2px, transparent 3px),
-        radial-gradient(circle at 92% 65%, white 1px, transparent 2px);
-}
-
-/* Button */
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 13px 27px;
-    color: white;
-    background: #494565;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #7768a9;
-    transform: translateY(-2px);
 }
 
 /* Clouds */
 .cloud {
     position: absolute;
-    height: 100px;
+    height: 65px;
     border-radius: 50%;
     background: #f8f4ff;
     opacity: 0.9;
-    filter: blur(1px);
 }
 
 .cloud-one {
-    bottom: 85px;
+    bottom: 80px;
     left: -5%;
-    width: 45%;
-    height: 90px;
+    width: 40%;
     box-shadow:
         50px -25px 0 5px #f8f4ff,
-        100px 5px 0 0 #f8f4ff,
+        100px 5px 0 #f8f4ff,
         150px -20px 0 5px #eee7fa;
 }
 
 .cloud-two {
-    bottom: 90px;
+    bottom: 85px;
     right: -5%;
-    width: 45%;
-    height: 85px;
+    width: 40%;
     box-shadow:
         -50px -25px 0 5px #fff8ff,
-        -100px 0 0 0 #fff8ff,
+        -100px 0 0 #fff8ff,
         -150px -20px 0 5px #eee7fa;
 }
 
 .cloud-three {
-    bottom: 105px;
+    bottom: 100px;
     left: 35%;
     width: 30%;
-    height: 55px;
+    height: 40px;
     background: #f2d9f5;
 }
 
-/* City Skyline */
+/* City */
 .city {
     position: absolute;
     bottom: 0;
@@ -219,11 +173,8 @@ nav a:hover {
     bottom: 15px;
     background-color: #a5a6ca;
     border-top: 3px solid #c6c5e4;
-
     background-image:
-        radial-gradient(circle, #f5edff 1px, transparent 2px),
-        radial-gradient(circle, #e8cafa 1px, transparent 2px);
-
+        radial-gradient(circle, #f5edff 1px, transparent 2px);
     background-size: 13px 13px;
 }
 
@@ -263,7 +214,23 @@ nav a:hover {
     height: 55px;
 }
 
-/* Main Sections */
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 27px;
+    color: white;
+    background: #494565;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #7768a9;
+}
+
+/* Sections */
 .section {
     padding: 65px 8%;
     scroll-margin-top: 20px;
@@ -282,8 +249,7 @@ nav a:hover {
 
 .section h2 {
     font-size: 34px;
-    margin-top: 10px;
-    margin-bottom: 25px;
+    margin: 10px 0 25px;
 }
 
 .section-intro {
@@ -318,7 +284,9 @@ nav a:hover {
     box-shadow: 0 4px 15px rgba(80, 60, 120, 0.08);
 }
 
-.info-card h3 {
+.info-card h3,
+.content-card h3,
+.project-card h3 {
     color: #62548f;
 }
 
@@ -335,11 +303,6 @@ nav a:hover {
     border-radius: 8px;
     border-left: 5px solid #a999dc;
     box-shadow: 0 4px 15px rgba(80, 60, 120, 0.07);
-}
-
-.content-card h3,
-.project-card h3 {
-    color: #62548f;
 }
 
 .content-card h4 {
@@ -369,16 +332,11 @@ nav a:hover {
     border: 1px solid #d1c3ef;
     border-radius: 8px;
     color: #51466f;
-    box-shadow: 0 3px 10px rgba(80, 60, 120, 0.06);
 }
 
 .sub-heading {
     color: #62548f;
     margin-top: 40px;
-}
-
-.projects-container {
-    margin-top: 25px;
 }
 
 /* Contact */
@@ -405,10 +363,6 @@ footer {
 
 footer h3 {
     letter-spacing: 3px;
-}
-
-footer p {
-    font-size: 13px;
 }
 
 /* Admin Page */
@@ -474,7 +428,7 @@ footer p {
     font-weight: bold;
 }
 
-/* Mobile */
+/* Mobile Screen */
 @media (max-width: 750px) {
     header {
         position: relative;
